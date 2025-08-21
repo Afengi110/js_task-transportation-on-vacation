@@ -11,12 +11,12 @@ function calculateRentalCost(days) {
   const LONG_TERM_DISCOUNT = 50;
   const totalCost = DAILY_RATE * days;
 
-  if (days >= MEDIUM_TERM_THRESHOLD && days < LONG_TERM_THRESHOLD) {
-    return totalCost - MEDIUM_TERM_DISCOUNT;
-  }
-
   if (days >= LONG_TERM_THRESHOLD) {
     return totalCost - LONG_TERM_DISCOUNT;
+  }
+
+  if (days >= MEDIUM_TERM_THRESHOLD) {
+    return totalCost - MEDIUM_TERM_DISCOUNT;
   }
 
   return totalCost;
